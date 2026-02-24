@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenovo Exclusive Store Alwar | Official Dealer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .lenovo-red {
+            color: #E2231A;
+        }
+        .lenovo-red-bg {
+            background-color: #E2231A;
+        }
+        .sticky-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 40;
+        }
+        @media (max-width: 640px) {
+            .sticky-button {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+        .nav-scroll {
+            transition: box-shadow 0.3s ease;
+        }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(226, 35, 26, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Sticky Call Now Button -->
+    <div class="sticky-button">
+        <a href="tel:+919214311900" class="lenovo-red-bg text-white font-bold py-3 px-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition flex items-center gap-2 text-sm md:text-base">
+            <span>📞 Call Now</span>
+        </a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-scroll bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="font-heading font-bold text-2xl">
+                        <span class="lenovo-red">Lenovo Exclusive Store</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex gap-8">
+                    <a href="#home" class="text-gray-700 hover:lenovo-red transition font-medium">Home</a>
+                    <a href="#products" class="text-gray-700 hover:lenovo-red transition font-medium">Products</a>
+                    <a href="#about" class="text-gray-700 hover:lenovo-red transition font-medium">About Us</a>
+                    <a href="#why-choose" class="text-gray-700 hover:lenovo-red transition font-medium">Why Us</a>
+                    <a href="#contact" class="text-gray-700 hover:lenovo-red transition font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4 space-y-2">
+                <a href="#home" class="block text-gray-700 hover:lenovo-red py-2">Home</a>
+                <a href="#products" class="block text-gray-700 hover:lenovo-red py-2">Products</a>
+                <a href="#about" class="block text-gray-700 hover:lenovo-red py-2">About Us</a>
+                <a href="#why-choose" class="block text-gray-700 hover:lenovo-red py-2">Why Us</a>
+                <a href="#contact" class="block text-gray-700 hover:lenovo-red py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-white overflow-hidden">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <img src="https://p1-ofp.static.pub/ShareResource/na/products/thinkpad/431x431/lenovo-thinkpad-x1-carbon-g11.png" alt="ThinkPad Laptop" class="absolute inset-0 w-full h-full object-cover">
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6">
+                The ONLY Authorized Lenovo Dealer in Alwar
+            </h1>
+            <p class="text-lg md:text-2xl mb-8 text-gray-100">
+                Trusted partner for 20+ years delivering excellence and genuine Lenovo solutions
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#products" class="lenovo-red-bg text-white font-bold py-4 px-8 rounded-lg hover:opacity-90 transition text-lg">
+                    Explore Products
+                </a>
+                <a href="#contact" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-black transition text-lg">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section id="products" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Our Products
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Experience the full range of Lenovo's innovative technology across all our sub-brands
+                </p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- ThinkPad -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center">
+                        <img src="https://p1-ofp.static.pub/medias/bWF0dGVyLzIwMjMtMDYvMjEvMTY4NzM0Mjg4ODkyOS5qcGc=/lenovo-laptop-thinkpad-x1-carbon-gen-11-14-inch-pdp-hero.jpg" alt="ThinkPad" class="object-contain w-full h-full bg-white">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">ThinkPad</h3>
+                        <p class="text-gray-600 mb-4">Professional laptops for business and productivity</p>
+                        <a href="#contact" class="lenovo-red font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Legion -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center">
+                        <img src="https://p4-ofp.static.pub/medias/25732168923_LegionPro716IRX8H_202212060144421676451614275.png" alt="Legion Gaming" class="object-contain w-full h-full bg-white">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">Legion</h3>
+                        <p class="text-gray-600 mb-4">High-performance gaming laptops</p>
+                        <a href="#contact" class="lenovo-red font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Yoga -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center">
+                        <img src="https://p3-ofp.static.pub/medias/bWF0dGVyLzIwMjMtMDQvMTkvMTY4MTg3OTU4MzgyMi5qcGc=/lenovo-laptop-yoga-9i-gen-8-14-inch-pdp-hero.jpg" alt="Yoga Laptop" class="object-contain w-full h-full bg-white">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">Yoga</h3>
+                        <p class="text-gray-600 mb-4">Flexible 2-in-1 convertible laptops</p>
+                        <a href="#contact" class="lenovo-red font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- IdeaPad -->
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                        <img src="https://p2-ofp.static.pub/medias/bWF0dGVyLzIwMjMtMDQvMTkvMTY4MTg3OTU4MzgyMi5qcGc=/lenovo-laptop-ideapad-slim-5-gen-8-14-inch-pdp-hero.jpg" alt="IdeaPad" class="object-contain w-full h-full bg-white">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-2">IdeaPad</h3>
+                        <p class="text-gray-600 mb-4">Everyday computing for students and professionals</p>
+                        <a href="#contact" class="lenovo-red font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Products -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h4 class="font-heading font-bold text-lg text-gray-900 mb-2">📱 Desktops & All-in-One</h4>
+                    <p class="text-gray-600">Powerful desktop solutions for home and office</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h4 class="font-heading font-bold text-lg text-gray-900 mb-2">⌚ Accessories</h4>
+                    <p class="text-gray-600">Genuine Lenovo peripherals and upgrades</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h4 class="font-heading font-bold text-lg text-gray-900 mb-2">🔧 Service & Support</h4>
+                    <p class="text-gray-600">Expert technical support and warranty services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Why Choose Us?
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Your trusted partner for authentic Lenovo technology and exceptional service
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Trust Signal 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 lenovo-red-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl text-white">✓</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-2">100% Genuine Products</h3>
+                    <p class="text-gray-600">All products are directly sourced from Lenovo with complete authenticity guarantee</p>
+                </div>
+
+                <!-- Trust Signal 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 lenovo-red-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🛡️</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-2">Official Warranty</h3>
+                    <p class="text-gray-600">Complete manufacturer warranty and official support from Lenovo India</p>
+                </div>
+
+                <!-- Trust Signal 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 lenovo-red-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">👨‍💼</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-2">Expert Service</h3>
+                    <p class="text-gray-600">Trained technicians providing professional setup, repair, and support services</p>
+                </div>
+
+                <!-- Trust Signal 4 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 lenovo-red-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">⭐</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-2">20+ Years Legacy</h3>
+                    <p class="text-gray-600">Serving Alwar with trust, integrity, and excellence since 2000+</p>
+                </div>
+
+                <!-- Trust Signal 5 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 lenovo-red-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🏆</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-2">Only Authorized Dealer</h3>
+                    <p class="text-gray-600">Exclusive Lenovo authorized dealership in Alwar, Rajasthan</p>
+                </div>
+
+                <!-- Trust Signal 6 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 lenovo-red-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">💰</span>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-2">Best Pricing</h3>
+                    <p class="text-gray-600">Competitive pricing with special discounts and easy EMI options available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-heading text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Our Story
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        For over 20 years, we have been the cornerstone of technology in Alwar. As the ONLY authorized Lenovo dealer in the region, we take pride in delivering authentic products and world-class service.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Our commitment to excellence has earned the trust of thousands of customers across Alwar and neighboring areas. We believe in building lasting relationships through honest business practices and superior customer care.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Whether you're a student, professional, or business, we have the perfect Lenovo solution tailored to your needs.
+                    </p>
+                    <a href="#contact" class="lenovo-red-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition inline-block">
+                        Start Your Journey
+                    </a>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=500&fit=crop" alt="Team" class="rounded-lg shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+                Get in Touch
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="text-2xl">📍</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Address</h4>
+                                    <p class="text-gray-700">101, Jai Complex<br>Alwar, Rajasthan 301001</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="text-2xl">📞</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Phone</h4>
+                                    <p class="text-gray-700">
+                                        <a href="tel:+919214311900" class="lenovo-red hover:underline">+91 9214311900</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="text-2xl">⏰</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Hours</h4>
+                                    <p class="text-gray-700">
+                                        Monday - Saturday: 10:00 AM - 8:00 PM<br>
+                                        Sunday: 11:00 AM - 7:00 PM
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="text-2xl">✉️</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Email</h4>
+                                    <p class="text-gray-700">
+                                        <a href="mailto:sarthakinfotech@gmail.com" class="lenovo-red hover:underline">sarthakinfotech@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <a href="tel:+919214311900" class="lenovo-red-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition inline-block mt-8 w-full text-center">
+                            Call Us Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map & Form -->
+                <div>
+                    <iframe class="w-full h-96 rounded-lg shadow-lg mb-6" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.127476439571!2d75.62310507602317!3d27.576265976287344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c63d8c4d4d4d5%3A0x365d4f5e5e5e5e5e!2sJai%20Complex%2C%20Alwar!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <!-- WhatsApp Request Button -->
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-heading font-bold text-lg text-gray-900 mb-4">Request a Quote</h4>
+                        <p class="text-gray-600 mb-4">Click below to send us a message on WhatsApp. We'll get back to you shortly with quotes and details.</p>
+                        <a href="https://wa.me/919214311900?text=Hello%20Lenovo%20Alwar%2C%20I%20am%20interested%20in%20purchasing%20a%20Lenovo%20product.%20Could%20you%20please%20provide%20more%20details%3F" target="_blank" rel="noopener noreferrer" class="lenovo-red-bg text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition w-full text-center block">
+                            📱 Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">About</h4>
+                    <p class="text-gray-400 text-sm">Official Lenovo authorized dealer serving Alwar for 20+ years with integrity and excellence.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#products" class="hover:text-white transition">Products</a></li>
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Products</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">ThinkPad</a></li>
+                        <li><a href="#" class="hover:text-white transition">Legion</a></li>
+                        <li><a href="#" class="hover:text-white transition">Yoga</a></li>
+                        <li><a href="#" class="hover:text-white transition">IdeaPad</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Contact</h4>
+                    <p class="text-gray-400 text-sm mb-2">📍 101, Jai Complex, Alwar</p>
+                    <p class="text-gray-400 text-sm mb-2">📞 <a href="tel:+919214311900" class="hover:text-white transition">+91 9214311900</a></p>
+                    <p class="text-gray-400 text-sm">✉️ <a href="mailto:sarthakinfotech@gmail.com" class="hover:text-white transition">sarthakinfotech@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                    <p>&copy; 2026 Lenovo Authorized Store Alwar. All rights reserved.</p>
+                    <div class="flex gap-4 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

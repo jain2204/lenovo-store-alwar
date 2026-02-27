@@ -15,6 +15,9 @@
         
         body {
             background-color: #fbfbfb;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .font-heading {
@@ -25,8 +28,9 @@
         /* Glassmorphism Effect */
         .glass-effect {
             background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.18);
+            will-change: backdrop-filter;
         }
 
         .lenovo-red {
@@ -52,7 +56,8 @@
         }
 
         .nav-scroll {
-            transition: all 0.3s ease;
+            transition: box-shadow 0.3s ease;
+            transform: translateZ(0);
         }
 
         .nav-scroll.scrolled {
@@ -68,40 +73,46 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(30px) translateZ(0);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) translateZ(0);
             }
         }
 
         .animate-fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.7s ease-out forwards;
+            will-change: opacity, transform;
         }
 
         .animate-fade-in-delay-1 {
-            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+            animation: fadeInUp 0.7s ease-out 0.15s forwards;
             opacity: 0;
+            will-change: opacity, transform;
         }
 
         .animate-fade-in-delay-2 {
-            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            animation: fadeInUp 0.7s ease-out 0.3s forwards;
             opacity: 0;
+            will-change: opacity, transform;
         }
 
         .animate-fade-in-delay-3 {
-            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+            animation: fadeInUp 0.7s ease-out 0.45s forwards;
             opacity: 0;
+            will-change: opacity, transform;
         }
 
         /* Card Hover Lift */
         .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, box-shadow;
+            transform: translateZ(0);
         }
 
         .card-hover:hover {
-            transform: translateY(-8px);
+            transform: translateY(-8px) translateZ(0);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
@@ -109,7 +120,9 @@
         .glow-button {
             position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            transform: translateZ(0);
+            will-change: transform, box-shadow;
         }
 
         .glow-button::before {
@@ -120,7 +133,8 @@
             width: 100%;
             height: 100%;
             background: rgba(255, 255, 255, 0.3);
-            transition: left 0.5s ease;
+            transition: left 0.4s ease;
+            will-change: left;
         }
 
         .glow-button:hover::before {
@@ -128,28 +142,30 @@
         }
 
         .glow-button:hover {
-            box-shadow: 0 0 30px rgba(226, 35, 26, 0.6);
-            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(226, 35, 26, 0.5);
+            transform: scale(1.03) translateZ(0);
         }
 
         /* Floating Image */
         @keyframes float {
             0%, 100% {
-                transform: translateY(0px);
+                transform: translateY(0px) translateZ(0);
             }
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-15px) translateZ(0);
             }
         }
 
         .float-image {
-            animation: float 6s ease-in-out infinite;
+            animation: float 5s ease-in-out infinite;
+            will-change: transform;
         }
 
         /* Section Separator */
         .section-divider {
             background: linear-gradient(to right, transparent, #e0e0e0, transparent);
             height: 1px;
+            contain: layout;
         }
 
         /* Gradient Text */
@@ -242,16 +258,16 @@
                 <!-- Left: Text Content -->
                 <div class="animate-fade-in">
                     <h1 class="font-heading text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                        The <span class="gradient-text">ONLY</span> Authorized Lenovo Dealer in Alwar
+                        Lenovo Exclusive Store<span class="gradient-text">
                     </h1>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Trusted partner for 20+ years delivering excellence and genuine Lenovo solutions to the people of Alwar and Rajasthan.
+                        Trusted partner for 20+ years delivering excellence and genuine solutions to the people of Alwar(Rajasthan).
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#products" class="lenovo-red-bg text-white font-bold py-4 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition text-center">
                             Explore Products
                         </a>
-                        <a href="#contact" class="border-2 lenovo-red border-red-500 text-red-600 font-bold py-4 px-8 rounded-full hover:lenovo-red-bg hover:text-white transition text-center">
+                        <a href="#contact" class="border-2 lenovo-red border-red-500 text-red-600 font-bold py-4 px-8 rounded-full hover:shadow-lg transform hover:scale-105 transition text-center">
                             Get in Touch
                         </a>
                     </div>
@@ -260,7 +276,7 @@
                 <!-- Right: Floating Image -->
                 <div class="animate-fade-in-delay-1 hidden md:block">
                     <div class="float-image">
-                        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800" alt="Premium ThinkPad" class="rounded-2xl shadow-2xl w-full h-auto">
+                        <img src="images/products/LenovoThinkpad.avif" alt="Premium ThinkPad" class="rounded-2xl shadow-2xl w-full h-auto" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -304,7 +320,7 @@
                 <!-- ThinkPad -->
                 <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="h-64 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800" alt="ThinkPad" class="object-cover w-full h-full">
+                        <img src="images/products/LenovoThinkpad.avif" alt="ThinkPad" class="object-cover w-full h-full" style="object-fit: contain; background: white;">
                     </div>
                     <div class="p-8">
                         <h3 class="font-heading font-bold text-2xl text-gray-900 mb-3">ThinkPad</h3>
@@ -316,7 +332,7 @@
                 <!-- Legion -->
                 <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="h-64 bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&q=80&w=800" alt="Legion Gaming" class="object-cover w-full h-full">
+                        <img src="images/products/LegionImage.jpg" alt="Legion Gaming" class="object-cover w-full h-full" style="object-fit: contain; background: white;">
                     </div>
                     <div class="p-8">
                         <h3 class="font-heading font-bold text-2xl text-gray-900 mb-3">Legion</h3>
@@ -328,7 +344,7 @@
                 <!-- Yoga -->
                 <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="h-64 bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&q=80&w=800" alt="Yoga Laptop" class="object-cover w-full h-full">
+                        <img src="images/products/LnovoYoga.jpg" alt="Yoga Laptop" class="object-cover w-full h-full" style="object-fit: contain; background: white;">
                     </div>
                     <div class="p-8">
                         <h3 class="font-heading font-bold text-2xl text-gray-900 mb-3">Yoga</h3>
@@ -340,7 +356,7 @@
                 <!-- IdeaPad -->
                 <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="h-64 bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800" alt="IdeaPad" class="object-cover w-full h-full">
+                        <img src="images/products/LenovoIdeapad.jpg" alt="IdeaPad" class="object-cover w-full h-full" style="object-fit: contain; background: white;">
                     </div>
                     <div class="p-8">
                         <h3 class="font-heading font-bold text-2xl text-gray-900 mb-3">IdeaPad</h3>
@@ -348,10 +364,22 @@
                         <a href="#contact" class="lenovo-red font-semibold hover:gap-2 inline-flex items-center transition">Learn More <span>→</span></a>
                     </div>
                 </div>
+
+                <!-- Tablets -->
+                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md">
+                    <div class="h-64 bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center overflow-hidden">
+                        <img src="images/products/LenovoTablets.webp" alt="Tablets" class="object-cover w-full h-full" style="object-fit: contain; background: white;">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-heading font-bold text-2xl text-gray-900 mb-3">Tablets</h3>
+                        <p class="text-gray-600 mb-6 text-sm">Portable touchscreen devices for work and entertainment</p>
+                        <a href="#contact" class="lenovo-red font-semibold hover:gap-2 inline-flex items-center transition">Learn More <span>→</span></a>
+                    </div>
+                </div>
             </div>
 
             <!-- Additional Products -->
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="card-hover bg-white p-8 rounded-2xl shadow-md">
                     <h4 class="font-heading font-bold text-lg text-gray-900 mb-3">📱 Desktops & All-in-One</h4>
                     <p class="text-gray-600 text-sm">Powerful desktop solutions for home and office computing</p>
@@ -363,6 +391,10 @@
                 <div class="card-hover bg-white p-8 rounded-2xl shadow-md">
                     <h4 class="font-heading font-bold text-lg text-gray-900 mb-3">🔧 Service & Support</h4>
                     <p class="text-gray-600 text-sm">Expert technical support and comprehensive warranty services</p>
+                </div>
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-md">
+                    <h4 class="font-heading font-bold text-lg text-gray-900 mb-3">🌐 More Details</h4>
+                    <p class="text-gray-600 text-sm">Visit <a href="https://www.lenovo.com" target="_blank" class="lenovo-red font-semibold hover:underline">Lenovo.com</a> for latest products</p>
                 </div>
             </div>
         </div>
@@ -422,8 +454,8 @@
                     <div class="w-16 h-16 lenovo-red-bg rounded-full flex items-center justify-center mx-auto mb-6">
                         <span class="text-2xl">🏆</span>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-3">Only Authorized Dealer</h3>
-                    <p class="text-gray-600 text-sm">Exclusive Lenovo authorized dealership in Alwar, Rajasthan</p>
+                    <h3 class="font-heading font-bold text-xl text-gray-900 mb-3">Authorized Exclusive Store</h3>
+                    <p class="text-gray-600 text-sm">Lenovo authorized exclusive store in Alwar, Rajasthan</p>
                 </div>
 
                 <!-- Trust Signal 6 -->
@@ -447,7 +479,7 @@
                         Our <span class="gradient-text">Story</span>
                     </h2>
                     <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-                        For over 20 years, we have been the cornerstone of technology in Alwar. As the ONLY authorized Lenovo dealer in the region, we take pride in delivering authentic products and world-class service.
+                        For over 20 years, we have been the cornerstone of technology in Alwar. As an authorized Lenovo exclusive store in Rajasthan, we take pride in delivering authentic products and world-class service.
                     </p>
                     <p class="text-lg text-gray-700 mb-8 leading-relaxed">
                         Our commitment to excellence has earned the trust of thousands of customers across Alwar and neighboring areas. We believe in building lasting relationships through honest business practices and superior customer care.
@@ -481,7 +513,7 @@
                                 <div class="text-3xl">📍</div>
                                 <div>
                                     <h4 class="font-bold text-gray-900 mb-2">Address</h4>
-                                    <p class="text-gray-700">101, Jai Complex<br>Alwar, Rajasthan 301001</p>
+                                    <p class="text-gray-700">Jai Complex, 101, Jay Marg, Arya Nagar<br>Alwar, Rajasthan 301001, India</p>
                                 </div>
                             </div>
 
@@ -490,6 +522,7 @@
                                 <div>
                                     <h4 class="font-bold text-gray-900 mb-2">Phone</h4>
                                     <p><a href="tel:+919214311900" class="lenovo-red hover:underline font-semibold">+91 9214311900</a></p>
+                                    <p><a href="tel:+918696559555" class="lenovo-red hover:underline font-semibold">+91 8696559555</a></p>
                                 </div>
                             </div>
 
@@ -499,7 +532,7 @@
                                     <h4 class="font-bold text-gray-900 mb-2">Hours</h4>
                                     <p class="text-gray-700">
                                         Monday - Saturday: 10:00 AM - 8:00 PM<br>
-                                        Sunday: 11:00 AM - 7:00 PM
+                                        Sunday: Closed (Holiday)
                                     </p>
                                 </div>
                             </div>
@@ -508,26 +541,45 @@
                                 <div class="text-3xl">✉️</div>
                                 <div>
                                     <h4 class="font-bold text-gray-900 mb-2">Email</h4>
-                                    <p><a href="mailto:sarthakinfotech@gmail.com" class="lenovo-red hover:underline font-semibold">sarthakinfotech@gmail.com</a></p>
+                                    <p><a href="mailto:sarthak_infotech@yahoo.com" class="lenovo-red hover:underline font-semibold">sarthak_infotech@yahoo.com</a></p>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="tel:+919214311900" class="lenovo-red-bg text-white font-bold py-4 px-8 rounded-full hover:shadow-lg transition inline-block mt-10 w-full text-center">
-                            Call Us Now
-                        </a>
+                        <div class="space-y-3 mt-10">
+                            <a href="tel:+919214311900" class="lenovo-red-bg text-white font-bold py-4 px-8 rounded-full hover:shadow-lg transition inline-block w-full text-center block">
+                                Call Us Now
+                            </a>
+                            <a href="tel:18004197555" class="border-2 border-red-500 text-red-600 font-bold py-4 px-8 rounded-full hover:lenovo-red-bg hover:text-white transition inline-block w-full text-center block">
+                                Toll Free: 1800-419-7555
+                            </a>
+                        </div>
+
+                        <div class="mt-10 p-6 bg-blue-50 rounded-xl border border-blue-200">
+                            <h4 class="font-bold text-gray-900 mb-3">Lenovo Complaint Support</h4>
+                            <p class="text-gray-700 text-sm mb-2">Email: <a href="mailto:consumerts@lenovo.com" class="lenovo-red hover:underline font-semibold">consumerts@lenovo.com</a></p>
+                            <p class="text-gray-600 text-xs">(For consumer product support)</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Map & WhatsApp -->
                 <div class="animate-fade-in-delay-1 space-y-8">
-                    <iframe class="w-full h-80 rounded-2xl shadow-md" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.127476439571!2d75.62310507602317!3d27.576265976287344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c63d8c4d4d4d5%3A0x365d4f5e5e5e5e5e!2sJai%20Complex%2C%20Alwar!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe class="w-full h-80 rounded-2xl shadow-md" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.1274764395705!2d76.60777631434206!3d27.568939208984375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c63d8d0000001%3A0x0!2sJai%20Complex%2C%20101%2C%20Jay%20Marg%2C%20Arya%20Nagar%2C%20Alwar%2C%20Rajasthan%20301001!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <div class="bg-white p-10 rounded-2xl shadow-md">
+                        <h4 class="font-heading font-bold text-2xl text-gray-900 mb-6">Get Directions</h4>
+                        <a href="https://maps.google.com/maps?q=Jai+Complex,+101,+Jay+Marg,+Arya+Nagar,+Alwar,+Rajasthan+301001,+India" target="_blank" rel="noopener noreferrer" class="lenovo-red-bg text-white font-bold py-4 px-8 rounded-full hover:shadow-lg transition inline-block w-full text-center mb-4">
+                            📍 Open in Google Maps
+                        </a>
+                        <p class="text-gray-700 text-sm">Jai Complex, 101, Jay Marg, Arya Nagar<br>Alwar, Rajasthan 301001, India</p>
+                    </div>
                     
                     <!-- WhatsApp Request Button with Glow -->
                     <div class="bg-white p-10 rounded-2xl shadow-md">
                         <h4 class="font-heading font-bold text-2xl text-gray-900 mb-6">Quick Inquiry</h4>
                         <p class="text-gray-600 mb-8">Send us a message on WhatsApp. We'll respond within minutes with personalized quotes and details.</p>
-                        <a href="https://wa.me/919214311900?text=Hello%20Lenovo%20Alwar%2C%20I%20am%20interested%20in%20purchasing%20a%20Lenovo%20product.%20Could%20you%20please%20provide%20more%20details%3F" target="_blank" rel="noopener noreferrer" class="glow-button lenovo-red-bg text-white font-bold py-4 px-8 rounded-full hover:shadow-xl transition w-full text-center block">
+                        <a href="https://wa.me/919214311900?text=Hello%20sarthak%20infotech%20Alwar%2C%20I%20am%20interested%20in%20purchasing%20a%20Lenovo%20product.%20Could%20you%20please%20provide%20more%20details%3F" target="_blank" rel="noopener noreferrer" class="glow-button lenovo-red-bg text-white font-bold py-4 px-8 rounded-full hover:shadow-xl transition w-full text-center block">
                             📱 Chat on WhatsApp
                         </a>
                     </div>
@@ -559,13 +611,16 @@
                         <li><a href="#" class="hover:text-white transition">Legion</a></li>
                         <li><a href="#" class="hover:text-white transition">Yoga</a></li>
                         <li><a href="#" class="hover:text-white transition">IdeaPad</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tablets</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-heading font-bold text-lg mb-6">Contact</h4>
-                    <p class="text-gray-400 text-sm mb-3">📍 101, Jai Complex, Alwar</p>
+                    <p class="text-gray-400 text-sm mb-3">📍 Jai Complex, 101, Jay Marg, Arya Nagar, Alwar, Rajasthan 301001</p>
                     <p class="text-gray-400 text-sm mb-3">📞 <a href="tel:+919214311900" class="hover:text-white transition">+91 9214311900</a></p>
-                    <p class="text-gray-400 text-sm">✉️ <a href="mailto:sarthakinfotech@gmail.com" class="hover:text-white transition">sarthakinfotech@gmail.com</a></p>
+                    <p class="text-gray-400 text-sm mb-3">📞 <a href="tel:+918696559555" class="hover:text-white transition">+91 8696559555</a></p>
+                    <p class="text-gray-400 text-sm mb-3">📞 Toll Free: <a href="tel:18004197555" class="hover:text-white transition">1800-419-7555</a></p>
+                    <p class="text-gray-400 text-sm">✉️ <a href="mailto:sarthak_infotech@yahoo.com" class="hover:text-white transition">sarthak_infotech@yahoo.com</a></p>
                 </div>
             </div>
 
@@ -613,14 +668,21 @@
             });
         });
 
-        // Navbar glassmorphism on scroll
+        // Navbar glassmorphism on scroll (throttled for performance)
+        let ticking = false;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                    ticking = false;
+                });
+                ticking = true;
             }
-        });
+        }, { passive: true });
 
         // Fade-in animation on scroll
         const observerOptions = {
